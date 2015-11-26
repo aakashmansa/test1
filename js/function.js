@@ -6,3 +6,7 @@ $(document).on("click","#add_position",function(){
 
 	ele.append(html);
 });
+
+$(document).on("click","#stks",function(){
+	$(".fc-button-agendaWeek").click();
+});
