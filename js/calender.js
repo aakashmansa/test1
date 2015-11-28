@@ -77,6 +77,9 @@ $(document).ready(function(){
     },
     eventClick: function(event, element) {
         event.title = "CLICKED!";
+    },
+    dragStart: function(_dragElement, ev, ui){
+      console.log(_dragElement);
     }
   });
 
@@ -94,22 +97,22 @@ $(document).ready(function(){
       {
         id: 999,
         title: 'Free for talk',
-        start: new Date(y, m, d-3,13,0),
-        end: new Date(y, m, d-3, 14, 0),
+        start: new Date(y, m, d+3,8,0),
+        end: new Date(y, m, d+3, 10, 0),
         allDay: false
       },
       {
         id: 1000,
         title: 'Free for talk',
-        start: new Date(y, m, d-2,14,0),
-        end: new Date(y, m, d-2, 15, 0),
+        start: new Date(y, m, d+2,14,0),
+        end: new Date(y, m, d+2, 15, 0),
         allDay: false
       },
       {
         id: 1001,
         title: 'Free for talk',
-        start: new Date(y, m, d-1,15,0),
-        end: new Date(y, m, d-1, 16, 0),
+        start: new Date(y, m, d+1,15,0),
+        end: new Date(y, m, d+1, 16, 0),
         allDay: false
       },
       {
@@ -194,5 +197,43 @@ $(document).ready(function(){
 
         modal.modal('hide');
   });
+
+
+    var $gallery = $( "#gallery" ),
+      $trash = $( "#trash" );
+ 
+    // let the gallery items be draggable
+    $( "div", $gallery ).draggable({
+      cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+      revert: "invalid", // when not dropped, the item will revert back to its initial position
+      containment: "document",
+      helper: "clone",
+      cursor: "move"
+    });
+ 
+    // let the trash be droppable, accepting the gallery items
+    $trash.droppable({
+      accept: "#gallery > div",
+      activeClass: "ui-state-highlight",
+      drop: function( event, ui ) {
+        ui.draggable.clone().removeClass('btn-default').addClass('btn-success').appendTo($trash);
+        
+        console.log( ui.draggable );
+      }
+    });
+ 
+    // let the gallery be droppable as well, accepting items from the trash
+    $gallery.droppable({
+      accept: "#trash div",
+      activeClass: "custom-state-active",
+      drop: function( event, ui ) {
+        recycleImage( ui.draggable );
+      }
+    });
+
+
+
+
+
 
 });

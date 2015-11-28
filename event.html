@@ -66,109 +66,78 @@
   <div class="container">
     <div class="row">
       <div class="page_title">
-        <h1>Advance Roster search</h1>
+        <h1>Advanced search</h1>
       </div>
     </div>
     <div class="row">
-    <div class="col-md-3">
+      <div class="col-md-5">
         <div class="input-group col-md-12">
-          <input type="text" class="form-control" placeholder="Search By Name" />
+          <input type="text" class="form-control" placeholder="Search By Roster" />
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-5">
         <div class="input-group col-md-12">
-          <select class="form-control">
-            <option>- Select Team -</option>
-            <option>Washington Redskins</option>
-            <option>Cleveland Indians</option>
-            <option>Atlanta Braves</option>
-            <option>Kansas City Chiefs</option>
-            <option>Dallas Cowboys</option>
-          </select>
+          <input type="text" class="form-control" placeholder="Search By Date" />
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <div class="input-group col-md-12">
-          <select class="form-control">
-            <option>- Select sport -</option>
-            <option>Baseball</option>
-            <option>Basketball</option>
-            <option>Hockey</option>
-            <option>Football</option>
-            <option>Cricket</option>
-          </select>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="input-group col-md-12">
-          <input type="button" class="theme_button btn btn-default" value="Search" />
+          <input type="button" class=" btn btn-default " value="Search" />
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
-          <div class="user_info">
-              <div class="user_images">
-                  <img src="images/images.jpg" />
+    	<div class="col-md-4">
+        	<div class="user_info">
+            	<div class="event_image">
+                	<img src="images/event_img.jpg" />
                 </div>
-                <div class="user_deatails">
-                  <h3>John Samit</h3>
-                  <h4>United States</h4>
-                  <h4>San Francisco Giants</h4>
-                  <h4>Scores & Schedule</h4>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-          <a href="analyst-profile-view.html">
-            <div class="user_info">
-              <div class="user_images">
-                <img height="227px" src="images/analyst.jpg" />
-              </div>
-              <div class="user_deatails">
-                <h3>Matt Adams</h3>
-                <h4>United States</h4>
-                <h4>St. Louis Cardinals</h4>
-                <h4>First Base</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3">
-          <div class="user_info">
-              <div class="user_images">
-                  <img src="images/images.jpg" />
-                </div>
-                <div class="user_deatails">
-                  <h3>John Samit</h3>
-                  <h4>United States</h4>
-                  <h4>San Francisco Giants</h4>
-                  <h4>Scores & Schedule</h4>
+                <div class="event_info">
+                	<h3>San Francisco</h3>
+                	<h4>Date : 11 Nov 2015</h4>
+                	<h4>Roster : John Samit</h4>
+                	<a href="#" class="theme_button btn btn-default">Join</a> 
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-          <div class="user_info">
-              <div class="user_images">
-                  <img src="images/images.jpg" />
+        <div class="col-md-4">
+        	<div class="user_info">
+            	<div class="event_image">
+                	<img src="images/event_img.jpg" />
                 </div>
-                <div class="user_deatails">
-                  <h3>John Samit</h3>
-                  <h4>United States</h4>
-                  <h4>San Francisco Giants</h4>
-                  <h4>Scores & Schedule</h4>
+                <div class="event_info">
+                	<h3>San Francisco</h3>
+                	<h4>Date : 11 Nov 2015</h4>
+                	<h4>Roster : John Samit</h4>
+                	<a href="#" class="theme_button btn btn-default">Join</a> 
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+        	<div class="user_info">
+            	<div class="event_image">
+                	<img src="images/event_img.jpg" />
+                </div>
+                <div class="event_info">
+                	<h3>San Francisco</h3>
+                	<h4>Date : 11 Nov 2015</h4>
+                	<h4>Roster : John Samit</h4>
+                	<a href="#" class="theme_button btn btn-default">Join</a> 
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
   </div>
 </section>
 <footer>
-  <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="copyright">
-                  
+	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12">
+            	<div class="copyright">
+                	
 © Copyright 2013, All Rights Reserved.
                 </div>
             </div>
@@ -188,7 +157,7 @@
                 <div class="modal-body">
                   <div id="loginbox">
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-       <form method="post" action="profile.html" id="loginform" class="form-horizontal" role="form">
+			 <form method="post" action="profile.html" id="loginform" class="form-horizontal" role="form">
           <div style="margin-bottom: 25px" class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">
           </div>
@@ -208,10 +177,7 @@
             
             <div class="col-sm-12 controls">
               <button id="btn-login" type="submit" class="btn btn-success">Login </button>
-              <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a> 
-              <a href="analyst-profile.html" id="btn-login" class="btn btn-success">Login as Analyst </a> 
-              <a href="admin.html" id="btn-login" class="btn btn-success">Login as admin </a> 
-              </div>
+              <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a> <a href="admin.html" id="btn-login" class="btn btn-success">Login as admin </a> </div>
           </div>
           <div class="form-group">
             <div class="col-md-12 control">

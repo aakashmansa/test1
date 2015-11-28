@@ -22,6 +22,15 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+<style type="text/css">
+  #trash{
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    min-height: 35px;
+    padding: 5px;
+  }
+</style>
 </head>
 <body>
 
@@ -65,7 +74,7 @@ Licensed under MIT
                   </li>
                   <li><a href="#about">VIDEOCHAT</a>
                   <ul>
-                      <li><a href="#">Search Capabilities</a></li>
+                      <li><a href="event.html">Search Capabilities</a></li>
                       <li><a href="#">By Analysts</a></li>
                       <li><a href="#">By Team</a></li>
                     </ul>
@@ -364,8 +373,8 @@ Licensed under MIT
                                             </span>
                                         </div>
                                     </div>
-
-                                    <div class="form-group"> <div class="form-group">
+                                     
+                                    <div class="form-group">
                                         <label for="first">End Time</label>
                                         <div class='input-group date' id='datetimepicker2'>
                                             <input name="end_time" type='text' class="form-control" />
@@ -374,21 +383,24 @@ Licensed under MIT
                                             </span>
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for="first">Min call duration</label>
-                                        <select name="min_duration" class="form-control">
-                                            <option value="5">5 Min</option>
-                                            <option value="15">15 Min</option>
-                                            <option value="30">30 Min</option>
-                                            <option value="45">45 Min</option>
-                                            <option value="60">1 Hour</option>
-                                        </select>
-                                        
-                                    </div>
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    <div>
+                        <span>Pick call slot and drop on call window</span>
+                        <div id="gallery" class="clearfix">
+                          <div class="btn btn-default col-md-1">5 Min</div>
+                          <div class="btn btn-default col-md-3">15 Min</div>
+                          <div class="btn btn-default col-md-6">30 Min</div>
+                          <div class="btn btn-default col-md-9">45 Min</div>
+                          <div class="btn btn-default col-md-12">60 Min</div>
+                        </div>
+
+                        <div style="margin-top:20px;">Drop and fill call window</div>
+                        <div id="trash" class="clearfix">
+                          
+                        </div>
                     </div>
                 </div>
 

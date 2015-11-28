@@ -94,6 +94,7 @@
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
   float: left;
   margin: 20px 0 0;
+  width:100%;
 }
 
 .user_images {
@@ -103,6 +104,8 @@
   overflow: hidden;
   width: 88%;
 }
+
+
 
 .user_images img {
   width: 100%;
@@ -248,3 +251,51 @@ body {
 .tab-content{
   padding: 20px;
 }
+
+.event_image {
+  border: 2px solid #cccccc;
+  float: left;
+  height: 140px;
+  margin: 10px;
+  overflow: hidden;
+  width: 40%;
+}
+
+.event_image img {
+width:100%;
+}
+
+
+.event_info {
+  float: left;
+  padding: 10px;
+  width: 50%;
+}
+
+.event_info h3 {
+  color: #0d436f;
+  font-size: 16px;
+  margin: 0;
+  text-align: left;
+}
+
+.event_info h4 {
+  font-size: 14px;
+  line-height: 25px;
+  text-align: left;
+}
+
+
+.copyright {
+  border-top: 1px solid #cccccc;
+  color: #494949;
+  padding: 20px 0;
+  text-align: center;
+  margin: 40px 0 0 0 ;
+}
+
+.theme_button
+	{
+		background:#0d436f;
+		color:#fff;
+	}
