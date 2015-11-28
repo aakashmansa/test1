@@ -1,8 +1,149 @@
-/***
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-Licensed under MIT
-***/
+@charset "utf-8";
+/* CSS Document */
+
+.logo {
+  text-align: center;
+}
+
+#navigation {
+  padding: 0;
+}
+
+.nav_bar
+	{
+	background:#0d436f;
+	}
+
+.navgiaton {
+	border: none !important;
+	background:#0d436f;
+	margin:0px;
+}
+.navgiaton ul {
+}
+.navgiaton ul li {
+	border-left: 1px solid #e0e5e9;
+
+}
+
+.navgiaton ul li ul {
+	display:block;
+}
+
+.navgiaton ul li ul {
+  display: none;
+  z-index: 1111;
+}
+
+.navgiaton ul li:hover ul {
+  background: #eaeaea none repeat scroll 0 0;
+  display: block;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.navgiaton ul li ul li {
+  list-style: outside none none;
+  padding: 10px 0;
+}
+
+.navgiaton ul li ul li:hover {
+	background:#0d436f;
+}
+
+.navgiaton ul li ul li:hover a{
+  color:#fff !important;
+  text-decoration:none;
+}
+
+.navgiaton ul li ul li a {
+  font-size: 16px;
+  padding: 0 15px;
+  color:#0d436f !important;
+}
+
+
+.navgiaton ul li a {
+  color: #ffffff !important;
+  font-size: 16px;
+  padding: 15px 40px;
+}
+
+.navgiaton ul li:first-child {
+  border: medium none;
+}
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: #8a171a;
+  color: #333333;
+}
+
+.page_title h1 {
+  font-size: 18px;
+}
+
+.page_title {
+  border-bottom: 1px solid #cccccc;
+  margin: 0 0 20px;
+}
+
+.user_info {
+  background: #ffffff none repeat scroll 0 0;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.15);
+  float: left;
+  margin: 20px 0 0;
+}
+
+.user_images {
+  border: 2px solid #cccccc;
+  float: left;
+  margin: 15px;
+  overflow: hidden;
+  width: 88%;
+}
+
+.user_images img {
+  width: 100%;
+}
+
+.user_deatails {
+  float: left;
+  padding: 0 0 20px;
+  width: 100%;
+}
+
+.user_deatails h3 {
+  color: #0d436f;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+}
+
+.user_deatails h4 {
+  color: #868686s;
+  font-size: 14px;
+  text-align: center;
+}
+
+.copyright {
+  border-top: 1px solid #cccccc;
+  color: #494949;
+  padding: 20px 0;
+  text-align: center;
+  margin: 40px 0 0 0 ;
+}
+
+.theme_button
+	{
+		background:#0d436f;
+		color:#fff;
+	}
+
+
+
+
 
 body {
   background: #F1F3FA;

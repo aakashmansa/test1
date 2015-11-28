@@ -53,7 +53,146 @@ $(document).ready(function(){
         start: new Date(y, m, d+2,13,0),
         end: new Date(y, m, d+2, 14, 0),
         allDay: false
-      },
-    ]
+      }, 
+    ],
+    dayClick: function(date, jsEvent, view) {
+        var modal = $("#myModal"),
+            currentDate = new Date();
+
+            if(date > currentDate){
+              modal.modal('show');
+
+              $(modal).find('#datetimepicker1').datetimepicker({
+                defaultDate: date,
+                sideBySide: true
+              });
+
+              $(modal).find('#datetimepicker1').data("DateTimePicker").date(date);
+            }
+            else
+            {
+              alert('Please select future time');
+            }
+
+    },
+    eventClick: function(event, element) {
+        event.title = "CLICKED!";
+    }
   });
+
+
+
+  $('#weekcalendar').fullCalendar({
+    header: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'month,agendaWeek,agendaDay'
+    },
+    editable: true,
+    defaultView: 'month',
+    events: [
+      {
+        id: 999,
+        title: 'Free for talk',
+        start: new Date(y, m, d-3,13,0),
+        end: new Date(y, m, d-3, 14, 0),
+        allDay: false
+      },
+      {
+        id: 1000,
+        title: 'Free for talk',
+        start: new Date(y, m, d-2,14,0),
+        end: new Date(y, m, d-2, 15, 0),
+        allDay: false
+      },
+      {
+        id: 1001,
+        title: 'Free for talk',
+        start: new Date(y, m, d-1,15,0),
+        end: new Date(y, m, d-1, 16, 0),
+        allDay: false
+      },
+      {
+        id: 1002,
+        title: 'Free for talk',
+        start: new Date(y, m, d,16,0),
+        end: new Date(y, m, d, 18, 0),
+        allDay: false
+      },
+      {
+        id: 1003,
+        title: 'Free for talk',
+        start: new Date(y, m, d+2,13,0),
+        end: new Date(y, m, d+2, 14, 0),
+        allDay: false
+      }, 
+    ],
+    dayClick: function(date, jsEvent, view) {
+        var modal = $("#myotherModal"),
+            currentDate = new Date();
+
+            if(date > currentDate){
+              modal.modal('show');
+
+              $(modal).find('#datetimepicker1').datetimepicker({
+                defaultDate: date,
+                sideBySide: true
+              });
+              $(modal).find('#datetimepicker2').datetimepicker({
+                sideBySide: true
+              });
+
+              $(modal).find('#datetimepicker1').data("DateTimePicker").date(date);
+            }
+            else
+            {
+              alert('Please select future time');
+            }
+    },
+  });
+
+  $(document).on("click","#addfreetime",function(){
+      var modal = $("#myotherModal"),
+          start_time = $(modal).find("input[name='start_time']").val(),
+          end_time = $(modal).find("input[name='end_time']").val(),
+          duration = $(modal).find("select[name='duration']").val(),
+          start = new Date(start_time),
+          end = new Date(end_time);
+
+      var newevent = {
+          id: Math.floor(Math.random() * (9999 - 999)) + 999,
+          title: "Free for call",
+          start: start,
+          end: end,
+          allDay: false
+        };
+
+        $("#weekcalendar").fullCalendar('renderEvent',newevent);
+
+        modal.modal('hide');
+  });
+
+  $(document).on("click","#addshow",function(){
+      var modal = $("#myModal"),
+          title = $(modal).find("input[name='title']").val(),
+          start_time = $(modal).find("input[name='start_time']").val(),
+          duration = $(modal).find("select[name='duration']").val(),
+          start = new Date(start_time),
+          end = new Date(start_time);
+
+      end.setMinutes(parseInt(end.getMinutes()) + parseInt(duration));
+
+      var newevent = {
+          id: Math.floor(Math.random() * (9999 - 999)) + 999,
+          title: title,
+          start: start,
+          end: end,
+          allDay: false
+        };
+
+        $("#calendar").fullCalendar('renderEvent',newevent);
+
+        modal.modal('hide');
+  });
+
 });

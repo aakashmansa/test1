@@ -123,7 +123,7 @@ Licensed under MIT
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Overview</a></li>
                             <li role="presentation"><a id="stks" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Sports Talk Shows</a></li>
-                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">One on One Consults</a></li>
+                            <li role="presentation"><a id="otov" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">One on One Consults</a></li>
                             <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Memorabilia</a></li>
                         </ul>
 
@@ -137,70 +137,90 @@ Licensed under MIT
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
-                                <div>
-                                    <h1>
-                                        Create new show
-                                    </h1>
-                                    <form>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="first">Title</label>
-                                                    <input type="text" class="form-control" id="first" placeholder="Title">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="first">Start Time</label>
-                                                    <div class='input-group date' id='datetimepicker1'>
-                                                        <input type='text' class="form-control" />
-                                                        <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="first">Duration</label>
-                                                    <input type="text" class="form-control" id="first" placeholder="Duration">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="first">Precall Duration</label>
-                                                    <input type="text" class="form-control" id="first" placeholder="Precall Duration">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="first">Postcall Duration</label>
-                                                    <input type="text" class="form-control" id="first" placeholder="Postcall Duration">
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="first">Call Duration</label>
-                                                    <select class="form-control">
-                                                        <option>1 Min</option>
-                                                        <option>2 Min</option>
-                                                        <option>5 Min</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-small btn-primary" type="button" id="addshow">Save</button>
-                                        </div>
-
-                                    </form>
-                                </div>
-
+                                <h1>Sports Talk schedule</h1>
                                 <div class="">
                                     <div id="calendar"></div>
                                 </div>
 
 
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="messages"></div>
+                            <div role="tabpanel" class="tab-pane" id="messages">
+                                <div>
+                                    <h1>
+                                        Schedule for week
+                                    </h1>
+                                    <div>
+                                        <h2>Pricing</h2>
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="first">5 min</label>
+                                                        <div class="input-group">
+                                                          <span class="input-group-addon">$</span>
+                                                          <input value="30"  name="price1" type="text" class="form-control" />
+                                                          <span class="input-group-addon">.00</span>
+                                                      </div>
+                                                        
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="first">30 min</label>
+                                                        <div class="input-group">
+                                                          <span class="input-group-addon">$</span>
+                                                           <input value="30" name="price1" type='text' class="form-control" />
+                                                          <span class="input-group-addon">.00</span>
+                                                      </div>  
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="first">1 hour</label>
+                                                        <div class="input-group">
+                                                          <span class="input-group-addon">$</span>
+                                                           <input value="60" name="price1" type='text' class="form-control" />
+                                                          <span class="input-group-addon">.00</span>
+                                                      </div>  
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="first">15 min</label>
+                                                        <div class="input-group">
+                                                          <span class="input-group-addon">$</span>
+                                                           <input value="15" name="price1" type='text' class="form-control" />
+                                                          <span class="input-group-addon">.00</span>
+                                                      </div>
+                                                        
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="first">45 min</label>
+                                                        <div class="input-group">
+                                                          <span class="input-group-addon">$</span>
+                                                           <input value="45" name="price1" type='text' class="form-control" />
+                                                          <span class="input-group-addon">.00</span>
+                                                      </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="checkbox" name="repeat" checked="checked" /> 
+                                            <span>Repeat schedule for week</span>
+                                        </label>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="">
+                                    <div id="weekcalendar"></div>
+                                </div>
+
+                            </div>
                             <div role="tabpanel" class="tab-pane" id="settings"></div>
                         </div>                        
                     </div>
@@ -208,6 +228,137 @@ Licensed under MIT
             </div>
         </div>
     </div>
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">New Sports Talk show</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first">Title</label>
+                                        <input name="title" type="text" class="form-control" id="first" placeholder="Title">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="first">Start Time</label>
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input name="start_time" type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="first">Duration</label>
+                                        <select name="duration" class="form-control">
+                                            <option value="60">1 hour</option>
+                                            <option value="120">2 hour</option>
+                                            <option value="180">3 hour</option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first">Precall Duration</label>
+                                        <input type="text" class="form-control" id="first" placeholder="Precall Duration">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="first">Postcall Duration</label>
+                                        <input type="text" class="form-control" id="first" placeholder="Postcall Duration">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="first">Call Duration</label>
+                                        <select class="form-control">
+                                            <option>1 Min</option>
+                                            <option>2 Min</option>
+                                            <option>5 Min</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-small btn-primary" type="button" id="addshow">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myotherModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">One on One video schedule</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first">Start Time</label>
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input name="start_time" type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group"> <div class="form-group">
+                                        <label for="first">End Time</label>
+                                        <div class='input-group date' id='datetimepicker2'>
+                                            <input name="end_time" type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="first">Min call duration</label>
+                                        <select name="min_duration" class="form-control">
+                                            <option value="5">5 Min</option>
+                                            <option value="15">15 Min</option>
+                                            <option value="30">30 Min</option>
+                                            <option value="45">45 Min</option>
+                                            <option value="60">1 Hour</option>
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-small btn-primary" type="button" id="addfreetime">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>

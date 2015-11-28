@@ -8,5 +8,9 @@ $(document).on("click","#add_position",function(){
 });
 
 $(document).on("click","#stks",function(){
-	$(".fc-button-agendaWeek").click();
+	$("#profile").find(".fc-button-agendaWeek").click();
+});
+
+$(document).on("click","#otov",function(){
+	$("#messages").find(".fc-button-agendaWeek").click();
 });
