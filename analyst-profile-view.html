@@ -381,12 +381,12 @@ Licensed under MIT
                 <div class="modal-body">
                     <div>
                         <form>
-                            <div class="row">
-                                <div class="col-md-6">
+                            <div class="">
+                                <div class="">
                                     <div class="form-group">
                                         <label for="first">Start Time</label>
                                         <div class='input-group date' id='datetimepicker1'>
-                                            <input name="start_time" type='text' class="form-control" />
+                                            <input disabled="" name="start_time" type='text' class="form-control" />
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -396,13 +396,17 @@ Licensed under MIT
 
                                     <div class="form-group">
                                         <label for="first">Duration</label>
-                                        <select name="duration" class="form-control">
-                                            <option value="5">5 Min</option>
-                                            <option value="15">15 Min</option>
-                                            <option value="30">30 Min</option>
-                                            <option value="45">45 Min</option>
-                                            <option value="60">1 Hour</option>
-                                        </select>
+                                        <ul class="time-slot list-group">
+                                        <li class="list-group-item text-center">
+                                            5 Min
+                                        </li>
+                                        <li class="list-group-item disabled text-center">
+                                            15 Min
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            30 Min
+                                        </li>
+                                    </ul>
                                         
                                     </div>
                                 </div>

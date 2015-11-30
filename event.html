@@ -136,7 +136,7 @@ Licensed under MIT
              <h3>San Francisco</h3>
              <h4>Date : 11 Nov 2015</h4>
              <h4>Roster : John Samit</h4>
-             <a href="#" class="theme_button btn btn-default">Join</a> 
+             <a data-toggle="modal" data-target="#bookShow" href="#" class="theme_button btn btn-default">Join</a> 
            </div>
          </div>
        </div>
@@ -149,7 +149,7 @@ Licensed under MIT
              <h3>San Francisco</h3>
              <h4>Date : 11 Nov 2015</h4>
              <h4>Roster : John Samit</h4>
-             <a href="#" class="theme_button btn btn-default">Join</a> 
+             <a data-toggle="modal" data-target="#bookShow" href="#" class="theme_button btn btn-default">Join</a> 
            </div>
          </div>
        </div>
@@ -162,7 +162,7 @@ Licensed under MIT
              <h3>San Francisco</h3>
              <h4>Date : 11 Nov 2015</h4>
              <h4>Roster : John Samit</h4>
-             <a href="#" class="theme_button btn btn-default">Join</a> 
+             <a data-toggle="modal" data-target="#bookShow" href="#" class="theme_button btn btn-default">Join</a> 
            </div>
          </div>
        </div>
@@ -290,6 +290,82 @@ Licensed under MIT
       </div><!-- /.modal-dialog -->
     </div>
   </div>
+
+
+  <div id="bookShow" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Book show slot</h4>
+                </div>
+
+                <div class="modal-body">
+                    <div>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first">Title</label>
+                                        <input disabled name="title" type="text" class="form-control" id="first" placeholder="Title">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="first">Start Time</label>
+                                        <div  class='input-group date' id='datetimepicker1'>
+                                            <input disabled name="start_time" type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="first">Select slot</label>
+                                    </div>
+                                    <ul class="time-slot list-group">
+                                        <li class="list-group-item text-center">
+                                            1:10 PM - 1: 15 PM
+                                        </li>
+                                        <li class="list-group-item disabled text-center">
+                                            1:15 PM - 1: 20 PM
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            1:20 PM - 1: 25 PM
+                                        </li>
+                                        <li class="list-group-item disabled text-center">
+                                            1:25 PM - 1: 30 PM
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            1:30 PM - 1: 35 PM
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            1:35 PM - 1: 40 PM
+                                        </li>
+                                        <li class="list-group-item text-center">
+                                            1:40 PM - 1: 45 PM
+                                        </li>
+                                        <li class="list-group-item disabled text-center">
+                                            1:45 PM - 1: 50 PM
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-small btn-primary" data-dismiss="modal" type="button">Book</button>
+                </div>
+            </div>
+        </div>
+    </div>
   
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -297,8 +373,11 @@ Licensed under MIT
 <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+<script src="js/bootstrap-datetimepicker.min.js"></script>
+
 <script src="js/fullcalender.js"></script>
 <script src="js/function.js"></script>
 <!-- Include Date Range Picker -->
@@ -328,6 +407,13 @@ Licensed under MIT
             $(document).on("change","#reportrange input[name='report_range']",function(){
                 $("#date_range").submit();
             });
+
+            $('#datetimepicker1').datetimepicker({
+                defaultDate: moment(),
+                sideBySide: true
+              });
+
+             $('#datetimepicker1').data("DateTimePicker").date(moment());
         });
 
 
