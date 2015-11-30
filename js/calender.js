@@ -158,7 +158,8 @@ $(document).ready(function(){
                   $("#trash").html('');
                   $("#trash").data('count', 0);
                   duration_ele.html(duration.humanize(true));
-                  console.log(duration);                  
+                  console.log(total_time);  
+                  console.log(min_length);                  
               });
 
               $(modal).find('#datetimepicker1').data("DateTimePicker").date(date);
@@ -235,19 +236,21 @@ $(document).ready(function(){
       activeClass: "ui-state-highlight",
       drop: function( event, ui ) {
         var min = parseInt(ui.draggable.data('min'));
-        var count = parseInt($trash.data('count'));
+        var count = parseFloat($trash.data('count'));
         
         if((count+(min*min_length)) <= 100 ){
 
-          var tmp = count+(min*min_length);
+          var tmp = (count+(min*min_length));
           $trash.data('count', tmp);
-          ui.draggable.clone().removeClass('btn-default').addClass('btn-success').css('width',(min*min_length)+'%').appendTo($trash);
-        
+          ui.draggable.clone().removeClass('btn-default').addClass('btn-success').css('width',Math.floor(min*min_length)+'%').appendTo($trash);
+          
         }
         else
         {
           alert('Slot too big to fit.')
         }
+
+        console.log((count+(min*min_length)));
         
       }
     });
