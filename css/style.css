@@ -258,7 +258,7 @@ body {
   height: 140px;
   margin: 10px;
   overflow: hidden;
-  width: 40%;
+  width: 33%;
 }
 
 .event_image img {
@@ -269,7 +269,7 @@ width:100%;
 .event_info {
   float: left;
   padding: 10px;
-  width: 50%;
+  width: 60%;
 }
 
 .event_info h3 {
