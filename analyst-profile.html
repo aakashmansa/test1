@@ -30,6 +30,17 @@
     min-height: 35px;
     padding: 5px;
   }
+
+  #time-line{
+    margin-top: 10px;
+    min-height: 35px;
+    padding: 5px;
+  }
+
+  #trash .min-5{
+
+  }
+
 </style>
 </head>
 <body>
@@ -352,7 +363,7 @@ Licensed under MIT
 
 
     <div id="myotherModal" class="modal fade">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -373,7 +384,8 @@ Licensed under MIT
                                             </span>
                                         </div>
                                     </div>
-                                     
+                                  </div>
+                                  <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="first">End Time</label>
                                         <div class='input-group date' id='datetimepicker2'>
@@ -383,22 +395,26 @@ Licensed under MIT
                                             </span>
                                         </div>
                                     </div>
+                                  </div>
                                 </div>
-                            </div>
+                            
                         </form>
                     </div>
                     <div>
                         <span>Pick call slot and drop on call window</span>
                         <div id="gallery" class="clearfix">
-                          <div class="btn btn-default col-md-1">5 Min</div>
-                          <div class="btn btn-default col-md-3">15 Min</div>
-                          <div class="btn btn-default col-md-6">30 Min</div>
-                          <div class="btn btn-default col-md-9">45 Min</div>
-                          <div class="btn btn-default col-md-12">60 Min</div>
+                          <div data-min="5" class="btn btn-default min-5">5 Min</div>
+                          <div data-min="15" class="btn btn-default min-15">15 Min</div>
+                          <div data-min="30" class="btn btn-default min-30">30 Min</div>
+                          <div data-min="45" class="btn btn-default min-45">45 Min</div>
+                          <div data-min="60" class="btn btn-default min-60">60 Min</div>
                         </div>
 
-                        <div style="margin-top:20px;">Drop and fill call window</div>
-                        <div id="trash" class="clearfix">
+                        <div style="margin-top:20px;">Drop and fill call window (<span id="duration"></span>)</div>
+                        <div data-count="0" id="trash" class="clearfix">
+                          
+                        </div>
+                        <div id="time-line" class="clearfix">
                           
                         </div>
                     </div>

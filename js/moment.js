@@ -2663,7 +2663,7 @@
     }
 
     var defaultRelativeTime = {
-        future : 'in %s',
+        future : 'for %s',
         past   : '%s ago',
         s  : 'a few seconds',
         m  : 'a minute',

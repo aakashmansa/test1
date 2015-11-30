@@ -9,6 +9,8 @@ $(document).ready(function(){
   var d = date.getDate();
   var m = date.getMonth();
   var y = date.getFullYear();
+  var total_time = 0.0,
+      min_length = 0.0;
   
   $('#calendar').fullCalendar({
     header: {
@@ -142,10 +144,26 @@ $(document).ready(function(){
                 sideBySide: true
               });
               $(modal).find('#datetimepicker2').datetimepicker({
+                defaultDate: date,
                 sideBySide: true
+              }).on("dp.change", function (e) {
+                  var start = $(modal).find('#datetimepicker1').data("DateTimePicker").date(),
+                      end = e.date,
+                      duration  = moment.duration(end.diff(start)),
+                      duration_ele = $("#duration");
+                  total_time = duration.asHours(),
+                  min_length = (1/(total_time * 60)) * 100; 
+
+
+                  $("#trash").html('');
+                  $("#trash").data('count', 0);
+                  duration_ele.html(duration.humanize(true));
+                  console.log(duration);                  
               });
 
               $(modal).find('#datetimepicker1').data("DateTimePicker").date(date);
+
+              $(modal).find('#datetimepicker2').data("DateTimePicker").date(moment(date).add(1, 'hours'));
             }
             else
             {
@@ -216,9 +234,21 @@ $(document).ready(function(){
       accept: "#gallery > div",
       activeClass: "ui-state-highlight",
       drop: function( event, ui ) {
-        ui.draggable.clone().removeClass('btn-default').addClass('btn-success').appendTo($trash);
+        var min = parseInt(ui.draggable.data('min'));
+        var count = parseInt($trash.data('count'));
         
-        console.log( ui.draggable );
+        if((count+(min*min_length)) <= 100 ){
+
+          var tmp = count+(min*min_length);
+          $trash.data('count', tmp);
+          ui.draggable.clone().removeClass('btn-default').addClass('btn-success').css('width',(min*min_length)+'%').appendTo($trash);
+        
+        }
+        else
+        {
+          alert('Slot too big to fit.')
+        }
+        
       }
     });
  
