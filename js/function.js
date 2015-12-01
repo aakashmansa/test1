@@ -14,3 +14,13 @@ $(document).on("click","#stks",function(){
 $(document).on("click","#otov",function(){
 	$("#messages").find(".fc-button-agendaWeek").click();
 });
+
+$(document).on("click","#logo",function(){
+	var i = parseInt($(this).data('count'));
+
+	i = i+1;
+	if(i > 9)
+		i = 1;
+	$(this).data('count',i);
+	$(this).attr('src','images/Logo_'+i+'.png')
+});

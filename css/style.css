@@ -299,3 +299,7 @@ width:100%;
 		background:#0d436f;
 		color:#fff;
 	}
+
+#logo{
+  cursor: pointer;
+}

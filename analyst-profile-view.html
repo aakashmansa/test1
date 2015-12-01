@@ -28,7 +28,23 @@
         .time-slot .list-group-item .disabled{
             background-color: #cccccc;
         }
-    </style>
+</style>
+<style type="text/css">
+    #trash{
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      margin-top: 10px;
+      min-height: 35px;
+      padding: 5px;
+    }
+
+    #time-line{
+      margin-top: 10px;
+      min-height: 35px;
+      padding: 5px;
+    }
+
+</style>
 
     <!-- HTML5 //#337ab7; shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -48,7 +64,7 @@ Licensed under MIT
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="logo"> <img src="images/Logo.png" /> </div>
+        <div class="logo"> <img id="logo" data-count="1" src="images/Logo.png" /> </div>
       </div>
     </div>
   </div>
@@ -392,26 +408,31 @@ Licensed under MIT
                                             </span>
                                         </div>
                                     </div>
-
-
                                     <div class="form-group">
                                         <label for="first">Duration</label>
-                                        <ul class="time-slot list-group">
-                                        <li class="list-group-item text-center">
-                                            5 Min
-                                        </li>
-                                        <li class="list-group-item disabled text-center">
-                                            15 Min
-                                        </li>
-                                        <li class="list-group-item text-center">
-                                            30 Min
-                                        </li>
-                                    </ul>
-                                        
+                                        <select class="form-control" name="call_duration">
+                                          <option value="0">- Select call duration -</option>
+                                          <option value="5">5 Min</option>
+                                          <option value="15">15 Min</option>
+                                          <option value="30">30 Min</option>
+                                          <option value="45">45 Min</option>
+                                          <option disabled value="60">60 Min</option>
+                                        </select>        
                                     </div>
                                 </div>
                             </div>
                         </form>
+                    </div>
+                    <div>
+                        
+                        <div style="margin-top:20px;">Available time (<span id="duration">45 Min</span>)</div>
+                        <div data-count="25" id="trash" class="clearfix">
+                          <div id="booked_time" disabled class="btn btn-default" data-min="15" style="width: 23%;">15 Min</div>
+                          <div id="fillable"></div>
+                        </div>
+                        <div id="time-line" class="clearfix">
+                          
+                        </div>
                     </div>
                 </div>
 
@@ -564,20 +585,37 @@ $(document).ready(function(){
     ],
     eventClick: function(event, element) {
         var modal = $("#myotherModal"),
-            currentDate = new Date();
+            currentDate = new Date(),
+            duration  = moment.duration(moment(event.end).diff(moment(event.start)));
+            total_time = duration.asHours(),
+            g_start = moment(event.start),
+            default_ele = $('<div id="booked_time"></div>').addClass('btn btn-default').attr('disabled','disabled'),
+            g_end = moment(event.end);
 
             if(event.start > currentDate){
+
               modal.modal('show');
 
               $(modal).find('#datetimepicker1').datetimepicker({
                 defaultDate: date,
                 sideBySide: true
               });
-              $(modal).find('#datetimepicker2').datetimepicker({
-                sideBySide: true
-              });
 
-              $(modal).find('#datetimepicker1').data("DateTimePicker").date(date);
+              var min_length = (1/(total_time * 60)) * 100;
+
+              default_ele.css('width',Math.floor(15*min_length)+'%')
+              $trash.data('count',15*min_length);
+
+              $trash.html('');
+              $trash.append(default_ele);
+
+              curr_time = moment(event.start).add(15, 'minutes');
+              $(modal).find('#datetimepicker1').data("DateTimePicker").date(curr_time);
+
+              $(modal).find("#booked_time").html(moment(event.start).format('hh:mm a')+'-'+moment(event.start).add(15, 'minutes').format('hh:mm a'));
+
+              var left_time = moment.duration(moment(event.end).diff(moment(event.start).add(15, 'minutes')));
+              $(modal).find("#duration").html(left_time.asMinutes()+' Min');
             }
             else
             {
@@ -586,6 +624,35 @@ $(document).ready(function(){
     }
   });
 
+  var $gallery = $( "#gallery" ),
+      $trash = $( "#trash" ),
+      total_time = 0.0,
+      curr_time = moment(),
+      g_start = moment(),
+      g_end = moment();
+  
+    $(document).on("click","select[name='call_duration'] option", function(){
+        var val = parseInt($(this).val()),
+            ele = $('<div></div>').addClass('btn btn-success'),
+            count = parseFloat($trash.data('count')),
+            min_length = (1/(total_time * 60)) * 100;
+
+        if(val!=0){
+          
+          if((count+(val*min_length)) <= 100 ){
+            ele.css('width',Math.floor(val*min_length)+'%').html(curr_time.format('hh:mm a')+'-'+curr_time.add(val, 'minutes').format('hh:mm a')).appendTo($trash);
+
+            var tmp = (count+(val*min_length));
+                $trash.data('count', tmp);
+            var left_time = moment.duration(moment(g_end).diff(curr_time));
+              $(document).find("#duration").html(left_time.asMinutes()+' Min');
+          }
+          else{
+            alert('Time to large');
+          }
+
+        }
+    });
 });
 
 
@@ -601,6 +668,8 @@ $(document).on("click",".time-slot li:not(.disabled)",function(){
     })
     $(this).addClass('selected')
 })
+
+
 
 
     </script>
