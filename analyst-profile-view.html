@@ -64,7 +64,7 @@ Licensed under MIT
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="logo"> <img id="logo" data-count="1" src="images/Logo.png" /> </div>
+        <div class="logo"> <img id="logo" data-count="1" src="images/Logo_10.png" /> </div>
       </div>
     </div>
   </div>
@@ -416,7 +416,7 @@ Licensed under MIT
                                           <option value="15">15 Min</option>
                                           <option value="30">30 Min</option>
                                           <option value="45">45 Min</option>
-                                          <option disabled value="60">60 Min</option>
+                                          <option value="60">60 Min</option>
                                         </select>        
                                     </div>
                                 </div>
@@ -603,7 +603,7 @@ $(document).ready(function(){
 
               var min_length = (1/(total_time * 60)) * 100;
 
-              default_ele.css('width',Math.floor(15*min_length)+'%')
+              //default_ele.css('width',Math.floor(15*min_length)+'%')
               $trash.data('count',15*min_length);
 
               $trash.html('');
@@ -640,7 +640,7 @@ $(document).ready(function(){
         if(val!=0){
           
           if((count+(val*min_length)) <= 100 ){
-            ele.css('width',Math.floor(val*min_length)+'%').html(curr_time.format('hh:mm a')+'-'+curr_time.add(val, 'minutes').format('hh:mm a')).appendTo($trash);
+            ele.html(curr_time.format('hh:mm a')+'-'+curr_time.add(val, 'minutes').format('hh:mm a')).appendTo($trash);
 
             var tmp = (count+(val*min_length));
                 $trash.data('count', tmp);
@@ -648,7 +648,7 @@ $(document).ready(function(){
               $(document).find("#duration").html(left_time.asMinutes()+' Min');
           }
           else{
-            alert('Time to large');
+            alert('Cannot book, requested minutes are greater than Available minutes');
           }
 
         }
