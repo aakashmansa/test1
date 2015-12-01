@@ -646,6 +646,8 @@ $(document).ready(function(){
                 $trash.data('count', tmp);
             var left_time = moment.duration(moment(g_end).diff(curr_time));
               $(document).find("#duration").html(left_time.asMinutes()+' Min');
+
+            $(document).find("select[name='call_duration']").attr('disabled','disabled');
           }
           else{
             alert('Cannot book, requested minutes are greater than Available minutes');
