@@ -648,31 +648,58 @@ $(document).ready(function(){
             l_start = g_start.clone();
 
         if(val!=0){
+
+            if(val==5){
+                if((count+(val*min_length)) <= 100 ){
+
+                    if($(document).find("#booking_slot").length == 0){
+                      l_end = g_end.clone();
+                      ele.html(l_end.subtract(val, 'minutes').format('hh:mm a')+'-'+g_end.format('hh:mm a')).addClass('pull-right').appendTo($trash);
+                      }
+                      else
+                      {
+                          l_end = g_end.clone();
+
+                          ele = $(document).find("#booking_slot");
+                          ele.html(l_end.subtract(val, 'minutes').format('hh:mm a')+'-'+g_end.format('hh:mm a')).removeClass('pull-right').addClass('pull-right');
+                      }
+
+                      l_start = g_start.clone();
+
+                      var left_time = moment.duration(l_end.diff(l_start.add(15, 'minutes')));
+                      $(document).find("#duration").html(left_time.asMinutes()+' Min');
+                }
+                else{
+                    alert('Cannot book, requested minutes are greater than Available minutes');
+                }
+            }
+            else{
+                if((count+(val*min_length)) <= 100 ){
+
+                    if($(document).find("#booking_slot").length == 0){
+                        l_start = g_start.clone();
+                        ele.html(curr_time.format('hh:mm a')+'-'+curr_time.add(val, 'minutes').format('hh:mm a')).appendTo($trash);
+                        l_start = curr_time;
+
+                    }
+                    else
+                    {
+                        l_start = g_start.clone();
+                        ele = $(document).find("#booking_slot");
+                        ele.html(l_start.add(15, 'minutes').format('hh:mm a')+'-'+l_start.add(val, 'minutes').format('hh:mm a')).removeClass('pull-right')
+                    }
+
+                    var left_time = moment.duration(moment(g_end).diff(l_start));
+                    $(document).find("#duration").html(left_time.asMinutes()+' Min');
+
+                }
+                else{
+                    alert('Cannot book, requested minutes are greater than Available minutes');
+                }
+
+            }
           
-          if((count+(val*min_length)) <= 100 ){
-
-            if($(document).find("#booking_slot").length == 0){
-              l_start = g_start.clone();
-              ele.html(curr_time.format('hh:mm a')+'-'+curr_time.add(val, 'minutes').format('hh:mm a')).appendTo($trash);
-              l_start = curr_time;
-
-            }
-            else
-            {
-              l_start = g_start.clone();
-
-              ele = $(document).find("#booking_slot");
-              ele.html(l_start.add(15, 'minutes').format('hh:mm a')+'-'+l_start.add(val, 'minutes').format('hh:mm a'))
-            }
-
-            var left_time = moment.duration(moment(g_end).diff(l_start));
-              $(document).find("#duration").html(left_time.asMinutes()+' Min');
-
-            //$(document).find("select[name='call_duration']").attr('disabled','disabled');
-          }
-          else{
-            alert('Cannot book, requested minutes are greater than Available minutes');
-          }
+          
 
         }
     });

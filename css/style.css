@@ -67,7 +67,7 @@
 .navgiaton ul li a {
   color: #ffffff !important;
   font-size: 16px;
-  padding: 15px 40px;
+  padding: 15px 35px;
 }
 
 .navgiaton ul li:first-child {
@@ -302,4 +302,5 @@ width:100%;
 
 #logo{
   cursor: pointer;
+  max-width: 180px;
 }
