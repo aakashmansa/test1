@@ -19,7 +19,7 @@ $(document).on("click","#logo",function(){
 	var i = parseInt($(this).data('count'));
 
 	i = i+1;
-	if(i > 14)
+	if(i > 3)
 		i = 1;
 	$(this).data('count',i);
 	$(this).attr('src','images/Logo_'+i+'.png')
