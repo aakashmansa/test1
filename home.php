@@ -139,7 +139,7 @@
       <div class="panel-footer"> </div>
     </div>
   </div>
-  <div data-ride="carousel" class="carousel vertical slide col-md-offset-1 col-md-3" id="myCarousel">
+  <div data-ride="carousel" class="carousel vertical slide col-md-4" id="myCarousel">
     <div role="" class="carousel-inner">
       <div class="item active">
         <div class="">
@@ -188,7 +188,7 @@
   </a>
 </div>
 
-<div class="col-md-offset-1 col-md-3">
+<div class="col-md-4">
   <div class="panel panel-default" style="margin-top: 20px;">
         <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>Powered by Sportseed</b></div>
         <div class="panel-body">
