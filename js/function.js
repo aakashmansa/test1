@@ -15,12 +15,12 @@ $(document).on("click","#otov",function(){
 	$("#messages").find(".fc-button-agendaWeek").click();
 });
 
-$(document).on("click","#logo",function(){
-	var i = parseInt($(this).data('count'));
+// $(document).on("click","#logo",function(){
+// 	var i = parseInt($(this).data('count'));
 
-	i = i+1;
-	if(i > 3)
-		i = 1;
-	$(this).data('count',i);
-	$(this).attr('src','images/Logo_'+i+'.png')
-});
+// 	i = i+1;
+// 	if(i > 3)
+// 		i = 1;
+// 	$(this).data('count',i);
+// 	$(this).attr('src','images/Logo_'+i+'.png')
+// });
