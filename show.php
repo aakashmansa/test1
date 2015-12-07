@@ -71,6 +71,9 @@
 		border-top:1px dotted #bbb;
 		padding:10px;
 	}
+	.like, .dislike{
+		cursor: pointer;
+	}
 </style>
 <div class="container">
 	<div class="row">
@@ -81,7 +84,7 @@
 	<div class="row">
 		<div class="col-md-offset-1 col-md-10" style="margin-top:20px">
 			<h2>Demo sports show</h2>
-			<div class="row">
+			<div class="row" style="position:relative">
 				<div class="col-md-2">
 					<img src="images/analyst.jpg" class="img-responsive" />
 				</div>
@@ -90,6 +93,14 @@
 						ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipiscing elit
 						ipsum dolor sit amet, consectetur adipiscing elit ipsum dolor sit amet, consectetur adipiscing elit
 					</p>
+				</div>
+				<div style="position:absolute;bottom:0;right:0">
+					<a class="like">
+						<i class="glyphicon glyphicon-thumbs-up"></i>  Like
+					</a>
+					<a class="dislike">
+						<i class="glyphicon glyphicon-thumbs-down"></i> Dislike 
+					</a>
 				</div>
 			</div>
 			<h3>Comments</h3>
