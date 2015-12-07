@@ -1,0 +1,18 @@
+[{
+  "name": "Jack Clark",
+  "sport": "Baseball",
+  "bio": "Jack Clark broke into the major leagues at the age of 19 with the San Francisco Giants and proceeded to terrorize pitchers for the next 18 years. Jack was a four-time All Star and two-time Silver Slugger winner. Jack played in two World Series (Cardinals 1985 and 1987). Nicknamed “The Ripper,” Jack was one of the most feared hitters of his generation, leading the major leagues in walks in 1987 and 1989 and ranking 50th all time in the category. In the book “You’re Missin’ a Great Game,” Whitey Herzog said, “Jack Clark could pull a bullet .I could be blindfolded and tell when Jack was taking (batting practice). … The man’s power scared people, kept the defenses honest and kept our jackrabbits circling the bases.” Jack slugged 340 home runs over the course of his career. His three-run homer in the ninth inning of Game Six of the 1985 NLCS against the Dodgers won the pennant for the Cardinals and remains one of the most memorable blasts in the storied franchise’s history.",
+  "teams": ["St. Louis Cardinals (1985-1987)",
+            "San Francisco Giants (1975-1984)",
+            "New York Yankees (1988)",
+            "Boston Red Sox (1989-1990)",
+            "San Diego Padres (1991-1992)"],
+  "image": "images/analyst.jpg"
+},
+{
+  "name": "Dana Cavalea",
+  "sport": "Baseball",
+  "bio":"Dana Cavalea is the founder and CEO of ML Strength, a sports performance consulting company with multiple locations in the New York state area.  ML Strength educates and trains athletes, coaches, and parents to attain maximum performance and lead a healthy life.  Dana has spent the bulk of his professional career in major league baseball, serving as the New York Yankees Director of Strength and Conditioning for 13 years (2001-2014).  With the Yankees, Dana trained on a daily basis players such as Derek Jeter, Mariano Rivera, Alex Rodriquez, Andy Pettitte, and Jorge Posada.  In 2009, Dana received the Nolan Ryan Award, which recognizes the most outstanding strength and conditioning coach in professional baseball.  Dana is a member of Under Armour’s Performance Training Council.  Dana received a Bachelor of Science in Exercise Science from the University of South Florida in 2004.",
+  "teams": ["New York Yankees (2001-2014)"],
+  "image": "images/analyst2.jpg"
+}]
