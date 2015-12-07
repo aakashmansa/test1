@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-8 no-padding">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                      <a href="#">Go to show</a>
+                      <a href="show.php">Go to show</a>
                     </div>
                   </div>
                 </li>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-8 no-padding">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                      <a href="#">Go to show</a>
+                      <a href="show.php">Go to show</a>
                     </div>
                   </div>
                 </li>
@@ -73,7 +73,7 @@
                   </div>
                   <div class="col-md-8 no-padding">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                    <a href="#">Go to show</a>
+                    <a href="show.php">Go to show</a>
                   </div>
                 </div>
               </li>
@@ -84,7 +84,7 @@
                   </div>
                   <div class="col-md-8 no-padding">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                    <a href="#">Go to show</a>
+                    <a href="show.php">Go to show</a>
                   </div>
                 </div>
               </li>
@@ -95,7 +95,7 @@
                     </div>
                     <div class="col-md-8 no-padding">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                      <a href="#">Go to show</a>
+                      <a href="show.php">Go to show</a>
                     </div>
                   </div>
                 </li>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-md-8 no-padding">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                      <a href="#">Go to show</a>
+                      <a href="show.php">Go to show</a>
                     </div>
                   </div>
                 </li>
@@ -117,7 +117,7 @@
                   </div>
                   <div class="col-md-8 no-padding">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                    <a href="#">Go to show</a>
+                    <a href="show.php">Go to show</a>
                   </div>
                 </div>
               </li>
@@ -128,7 +128,7 @@
                   </div>
                   <div class="col-md-8 no-padding">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
-                    <a href="#">Go to show</a>
+                    <a href="show.php">Go to show</a>
                   </div>
                 </div>
               </li>
